@@ -1474,7 +1474,7 @@
           <div class="hero-photo-wrap">
             <div class="hero-photo-inner">
               <img
-                src="https://github.com/Artin-cell/sayti/blob/main/media/photo_2026-06-21_14-20-11.jpg?raw=true"
+                src="https://1.downloader.disk.yandex.ru/preview/28aa723d0366eb61d66ec745057fdba2890ef73dbc3c89f4492a5d69ae6d1c1b/inf/E7E0KCA6WQtZtZ9T1CYjMZKy9Sn3DfGfc4IZ_Cn2TpyH7IQFry8riacv7VFGRNgJtsxn2cv81445kpznb53LXA%3D%3D?uid=908093564&filename=photo_2026-06-21_14-20-11.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=908093564&tknv=v3&is_direct_zip_experiment=1&size=3810x1906"
                 alt="Елена Костарева">
             </div>
           </div>
@@ -1898,17 +1898,12 @@
 
         <div>
           <div class="map-block">
-  <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2182.481839281261!2d60.60115097723424!3d56.837678507912905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43c16e8a4badf5c7%3A0x884800455bf4c21b!2z0J_Qu9C-0YLQuNC90LrQsA!5e0!3m2!1sru!2sru!4v1782249293083!5m2!1sru!2sru" 
-    width="100%" 
-    height="100%" 
-    frameborder="0" 
-    style="border:0;" 
-    allowfullscreen="" 
-    loading="lazy" 
-    referrerpolicy="strict-origin-when-cross-origin">
-  </iframe>
-</div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2182.481839281261!2d60.60115097723424!3d56.837678507912905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43c16e8a4badf5c7%3A0x884800455bf4c21b!2z0J_Qu9C-0YLQuNC90LrQsA!5e0!3m2!1sru!2sru!4v1782249293083!5m2!1sru!2sru"
+              width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin">
+            </iframe>
+          </div>
         </div>
       </div>
     </div>
@@ -1931,7 +1926,8 @@
 
       <div class="footer-bottom">
         <div>© 2026 Костарева Елена Николаевна. Все права защищены.</div>
-        <div class="foot-policy"><a href="#">Политика конфиденциальности</a></div>
+        <div class="foot-policy"><a href="javascript:void(0)" onclick="openPolicyModal()">Политика
+            конфиденциальности</a></div>
       </div>
     </footer>
 
@@ -1970,6 +1966,22 @@
         <button class="btn-style" style="max-width: 100%;" onclick="closeMdl()">Закрыть окно</button>
       </div>
 
+    </div>
+  </div>
+
+  <!-- МОДАЛЬНОЕ ОКНО ПОЛИТИКИ КОНФИДЕНЦИАЛЬНОСТИ -->
+  <div id="policy-modal" class="s-modal-overlay" onclick="closePolicyModal(event)">
+    <div class="s-modal-box" style="max-width: 700px;">
+      <button class="s-modal-close" onclick="closePolicyModal()">&times;</button>
+      <h3 class="s-modal-title">Политика конфиденциальности</h3>
+      <div class="s-modal-body" style="font-size: 13px; text-align: left;">
+        <p><strong>1. Общие положения</strong><br>Настоящая Политика конфиденциальности определяет порядок обработки, хранения и защиты персональных данных пользователей на сайте Костаревой Елены Николаевны.</p>
+        <p><strong>2. Какие персональные данные обрабатываются</strong><br>Обрабатываются только те данные, которые пользователь указывает в форме записи: Имя, Номер телефона и E-mail.</p>
+        <p><strong>3. Цели обработки данных</strong><br>Данные используются исключительно для организации записи на консультации, связи с клиентом и отправки подтверждений бронирования на электронную почту.</p>
+        <p><strong>4. Защита и передача данных</strong><br>Оператор обязуется не передавать данные третьим лицам, за исключением случаев, предусмотренных законодательством РФ. Все данные защищены от несанкционированного доступа.</p>
+        <p><strong>5. Отзыв данных</strong><br>Вы можете в любой момент отозвать свое согласие, написав специалисту по контактам, указанным на сайте.</p>
+      </div>
+      <button class="s-book-btn s-modal-btn" onclick="closePolicyModal()">Закрыть</button>
     </div>
   </div>
 
@@ -2262,8 +2274,19 @@
 
       demoData.forEach(item => renderCard(item.date, item.title, item.desc, item.img));
     }
+    function openPolicyModal() {
+      document.getElementById('policy-modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePolicyModal(event) {
+      if (!event || event.target.id === 'policy-modal' || event.target.classList.contains('s-modal-close') || event.target.classList.contains('s-modal-btn')) {
+        document.getElementById('policy-modal').classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    }
   </script>
-  </script>
+
 </body>
 
 </html>
